@@ -1,21 +1,21 @@
-const BASE_URL = "http://localhost:8080/api";
+import axios from "axios";
 
-export const getPackages = () =>
-  fetch(`${BASE_URL}/packages`).then(res => res.json());
+const MyURL = "http://localhost:8080/api";
 
-export const submitQuotation = data =>
-  fetch(`${BASE_URL}/quotations`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(data)
-  }).then(res => res.json());
+export function getPackages() {
+  return axios.get(MyURL + "/packages")
+    .then(response => response.data);
+}
 
-export const getQuotations = () =>
-  fetch(`${BASE_URL}/quotations`).then(res => res.json());
+export function submitQuotation(data) {
+  return axios.post(MyURL + "/quotations",data)
+    .then(response => response.data);
+}
+  export function getQuotations() {
+  return axios.get(MyURL + "/quotations")
+    .then(response => response.data);
+}
 
-export const updateQuotation = (id, data) =>
-  fetch(`${BASE_URL}/quotations/${id}`, {
-    method: "PATCH",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(data)
-  });
+export function updateQuotation(id,data) {
+  return axios.patch(MyURL + "/quotations/" +id, data);
+}
