@@ -1,4 +1,5 @@
 [
-  { "id": 1, "name": "Basic Plan", "speed": "50 Mbps", "dataCap": "500 GB", "price": 499 },
-  { "id": 2, "name": "Premium Plan", "speed": "200 Mbps", "dataCap": "Unlimited", "price": 999 }
+  { "id": 1, "name":"Basic Plans","speed": "50 Mbps","dataCap": "500 GB","price": 499 },
+  
+  { "id": 2, name":"Premium Plan","speed": "200 Mbps","dataCap": "Unlimited","price": 999 }
 ]
