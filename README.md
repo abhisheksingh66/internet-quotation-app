@@ -17,7 +17,7 @@ Users can select an internet package, enter personal details, and receive a gene
 - Java
 
 **Data Storage**
-- JSON / In-memory (for demo purpose)
+- JSON / In-memory
 
 ---
 
