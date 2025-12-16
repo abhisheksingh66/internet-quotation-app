@@ -1,15 +1,15 @@
-import { useEffect, useState } from "react";
-import { getQuotations, updateQuotation } from "../services/api";
+import { useEffect,useState } from "react";
+import { getQuotations,updateQuotation } from "../services/api";
 
 export default function AdminView() {
-  const [data, setdata] = useState([]);
+  const [data,setdata] = useState([]);
 
   const load = () => getQuotations().then(setdata);
   useEffect(load, []);
 
-  const action = (id, status) => {
+  const action = (id,status) => {
     const comment = prompt("enter comment");
-    updateQuotation(id, { status, comment }).then(load);
+    updateQuotation(id, {status,comment }).then(load);
   };
 
   return (
@@ -20,8 +20,8 @@ export default function AdminView() {
           <td>{q.packageName}</td>
           <td>{q.status}</td>
           <td>
-            <button onClick={() => action(q.id, "APPROVED")}>approve....🤗</button>
-            <button onClick={() => action(q.id, "REJECTED")}>reject...🤧</button>
+            <button onClick={() => action(q.id,"APPROVEd")}>approve....🤗</button>
+            <button onClick={() => action(q.id,"REJECTED")}>reject...🤧</button>
           </td>
         </tr>
       ))}
